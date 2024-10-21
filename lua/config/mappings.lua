@@ -1,57 +1,69 @@
+local map = vim.keymap.set
+
 -- UH
-vim.keymap.set({ "n", "v" }, "h", "j")
-vim.keymap.set({ "n", "v" }, "u", "k")
+map({ "n", "v" }, "h", "j")
+map({ "n", "v" }, "u", "k")
 
 -- scroll UH
-vim.keymap.set({ "n", "v" }, "U", "2<C-y>2k")
-vim.keymap.set({ "n", "v" }, "H", "2<C-e>2j")
+map({ "n", "v" }, "U", "2<C-y>2k")
+map({ "n", "v" }, "H", "2<C-e>2j")
 
 -- 'L
-vim.keymap.set({ "n", "v" }, "'", "h")
+map({ "n", "v" }, "'", "h")
 
 -- new line
-vim.keymap.set({ "n", "v", "i" }, "<C-h>", "<esc>o")
-vim.keymap.set({ "n", "v", "i" }, "<C-u>", "<esc>O")
+map({ "n", "v", "i" }, "<C-h>", "<esc>o")
+map({ "n", "v", "i" }, "<C-u>", "<esc>O")
 
-vim.keymap.set("n", "<cr>", "o")
+map("n", "<cr>", "o")
 
 -- TODO: unmap 's'
-vim.keymap.set({ "n", "v" }, "s", "<Nop>")
+map({ "n", "v" }, "s", "<Nop>")
 
 -- Undo/redo
-vim.keymap.set({ "n", "v" }, "k", "u")
-vim.keymap.set({ "n", "v" }, "K", "<C-r>")
+map({ "n", "v" }, "k", "u")
+map({ "n", "v" }, "K", "<C-r>")
 
 -- ON
-vim.keymap.set({ "n", "v" }, "o", "b")
-vim.keymap.set({ "n", "v" }, "n", "w")
+map({ "n", "v" }, "o", "b")
+map({ "n", "v" }, "n", "w")
 
 -- Save/exit
-vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<cmd>w<cr>")
-vim.keymap.set({ "n", "v", "i" }, "<C-S-s>", "<cmd>wq<cr>")
+map({ "n", "v", "i" }, "<C-s>", "<cmd>w<cr>")
+map({ "n", "v", "i" }, "<C-S-s>", "<cmd>wq<cr>")
 
 -- Telescope
-vim.keymap.set({ "n", "v" }, "\\", "<cmd>Telescope find_files<cr>")
+map({ "n", "v" }, "\\", "<cmd>Telescope find_files<cr>")
 
 -- Search
-vim.keymap.set({ "n", "v" }, "m", "n")
-vim.keymap.set({ "n", "v" }, "M", "N")
+map({ "n", "v" }, "m", "n")
+map({ "n", "v" }, "M", "N")
+
+-- Buffer
+map({'n','v','i'}, "<C-e>","<cmd>BufferLineCyclePrev<cr>")
+map({'n','v','i'}, "<C-t>","<cmd>BufferLineCycleNext<cr>")
+map({'n','v','i'}, "<C-x>","<cmd>BufferLinePickClose<cr>")
+
+-- Jump
+map({'n','v'}, "<leader>d", "<cmd>Telescope lsp_definitions<cr>")
+map({'n','v'}, "<leader>g", "<cmd>Telescope live_grep<cr>")
+map({'n','v'}, "<leader>n", "<cmd>Navbuddy<cr>")
 
 -- Format
-vim.keymap.set({ "n", "v" }, "<leader>l", function()
+map({ "n", "v" }, "<leader>l", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end)
 
 -- Rename var
-vim.keymap.set({ "n", "v" }, "<leader>q", function()
+map({ "n", "v" }, "<leader>q", function()
 	vim.lsp.buf.rename()
 end)
 
 -- Don't yank selection on delete
-vim.keymap.set("x", "<leader>p", "\"_dP")
+map("x", "<leader>p", "\"_dP")
 
 -- delete word
-vim.keymap.set({'n','v','i'}, "<C-c>", "ciw")
+map({'n','v','i'}, "<C-c>", "ciw")
 
 -- cool stuff
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")

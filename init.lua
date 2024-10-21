@@ -26,5 +26,4 @@ require("config.lazy")
 --require("everforest").load()
 vim.cmd([[colorscheme everforest]])
 
-
-
+vim.cmd("TransparentEnable")
