@@ -33,20 +33,24 @@ map({ "n", "v", "i" }, "<C-s>", "<cmd>w<cr>")
 map({ "n", "v", "i" }, "<C-S-s>", "<cmd>wq<cr>")
 
 -- Telescope
-map({ "n", "v" }, "\\", "<cmd>Telescope find_files<cr>")
+map({ "n", "v" }, "\\", "<cmd>Telescope find_files find_command=fd<cr>")
+map({ "n", "v" }, "<leader>wd", "<cmd>Telescope diagnostics theme=ivy<cr>")
 
 -- Search
 map({ "n", "v" }, "m", "n")
 map({ "n", "v" }, "M", "N")
 
 -- Buffer
-map({'n','v','i'}, "<C-e>","<cmd>BufferLineCyclePrev<cr>")
-map({'n','v','i'}, "<C-t>","<cmd>BufferLineCycleNext<cr>")
+map({'n','v','i'}, "<leader>e","<cmd>BufferLineCyclePrev<cr>")
+map({'n','v','i'}, "<leader>t","<cmd>BufferLineCycleNext<cr>")
 map({'n','v','i'}, "<C-x>","<cmd>BufferLinePickClose<cr>")
 
 -- Jump
 map({'n','v'}, "<leader>d", "<cmd>Telescope lsp_definitions<cr>")
+map({'n','v'}, "<leader>D", "<cmd>Telescope lsp_incoming_calls<cr>")
 map({'n','v'}, "<leader>g", "<cmd>Telescope live_grep<cr>")
+map({'n','v'}, "<leader>rs", "<cmd>Gitsigns stage_hunk<cr>")
+map({'n','v'}, "<leader>rS", "<cmd>Gitsigns reset_hunk<cr>")
 map({'n','v'}, "<leader>n", "<cmd>Navbuddy<cr>")
 
 -- Format

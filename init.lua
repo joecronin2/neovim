@@ -5,6 +5,7 @@ vim.opt.number = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.wo.relativenumber = true
+
 -- tab length
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -21,8 +22,8 @@ vim.g.python3_host_prog = "/opt/venvs/main/bin/python3"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("config.mappings")
 require("config.lazy")
+require("config.mappings")
 --require("everforest").load()
 vim.cmd([[colorscheme everforest]])
 
