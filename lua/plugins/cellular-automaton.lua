@@ -1,1 +1,5 @@
-return { "Eandrju/cellular-automaton.nvim" }
+return {
+	"Eandrju/cellular-automaton.nvim",
+	"ThePrimeagen/vim-be-good",
+	"alec-gibson/nvim-tetris",
+}

@@ -6,13 +6,14 @@ return {
 			ensure_installed = {
 				"pyright",
 				"lua_ls",
+				"texlab",
 				"bashls",
 				"clangd",
 				"jsonls",
 				"cmake",
 				"eslint",
 				"html",
-				"marksman",
+				-- "marksman",
 				"ts_ls",
 				"tailwindcss",
 				"asm_lsp",
@@ -43,6 +44,7 @@ return {
 				"cssls",
 				"bashls",
 				"lua_ls",
+				"texlab",
 				"asm_lsp",
 				"mesonlsp",
 				"jsonls",
@@ -200,4 +202,15 @@ return {
 			end
 		end,
 	},
+	-- {
+	-- 	"nvimdev/lspsaga.nvim",
+	-- 	config = function()
+	-- 		require("lspsaga").setup({
+	-- 		})
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter", -- optional
+	-- 		"nvim-tree/nvim-web-devicons", -- optional
+	-- 	},
+	-- },
 }
