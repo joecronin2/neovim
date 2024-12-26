@@ -8,7 +8,7 @@ return {
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
 			treesitter.setup({
-				ensure_installed = { "c", "markdown_inline", "lua", "vim", "typescript", "html" },
+				ensure_installed = { "c", "latex", "markdown_inline", "lua", "vim", "typescript", "html" },
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
