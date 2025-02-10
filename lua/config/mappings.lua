@@ -37,6 +37,9 @@ map({ "n", "v", "i" }, "<C-S-s>", "<cmd>wq<cr>")
 map({ "n", "v" }, "\\", "<cmd>Telescope find_files find_command=fd<cr>")
 map({ "n", "v" }, "<leader>wd", "<cmd>Telescope diagnostics theme=ivy<cr>")
 
+-- Lazy
+map({ "n", "v" }, "<leader>wu", "<cmd>Lazy update<cr>")
+
 -- Search
 map({ "n", "v" }, "m", "n")
 map({ "n", "v" }, "M", "N")
